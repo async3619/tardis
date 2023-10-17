@@ -1,0 +1,28 @@
+{
+    "name": "tardis",
+    "version": "1.0.0",
+    "description": "⏳a simple changelog grabber for nodejs packages",
+    "main": "index.js",
+    "scripts": {
+        "dev": "node -r ts-node/register --watch ./src/index.ts",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prepare": "ts-patch install"
+    },
+    "keywords": [],
+    "author": "Sophia <me@sophia-dev.io>",
+    "license": "MIT",
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^6.8.0",
+        "@typescript-eslint/parser": "^6.8.0",
+        "eslint": "^8.51.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-prettier": "^5.0.1",
+        "prettier": "^3.0.3",
+        "ts-node": "^10.9.1",
+        "ts-patch": "^3.0.2",
+        "typescript": "^5.2.2"
+    },
+    "dependencies": {
+        "typia": "^5.2.2"
+    }
+}
