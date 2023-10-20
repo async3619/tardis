@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs-extra";
 
-import { Command, Option } from "commander";
+import { Command } from "commander";
 
 import { BaseCommand } from "@root/commands/base";
 import { Package } from "@root/package";
@@ -31,7 +31,7 @@ export class PackageCommand extends BaseCommand<[name: string], PackageCommandOp
 
         let content = "";
         for (const changelog of changelogs) {
-            content += compact([`# ${changelog.title}`, changelog.content]).join("\n\n");
+            content += compact([`# ${changelog.tagName}`, changelog.content]).join("\n\n");
             content += "\n\n";
         }
 
