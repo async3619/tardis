@@ -10,7 +10,8 @@
         "strictNullChecks": true,
         "paths": {
             "@root/*": ["./src/*"],
-            "@utils/*": ["./src/utils/*"]
+            "@utils/*": ["./src/utils/*"],
+            "@commands/*": ["./src/commands/*"]
         }
     }
 }

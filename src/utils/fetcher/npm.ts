@@ -11,8 +11,14 @@ interface PackageInformation {
     };
 }
 
+interface PackageNotFound {
+    error: "Not found";
+}
+
+type PackageResponse = PackageNotFound | PackageInformation;
+
 interface NpmRouteDef extends RouteDefinitions {
-    "/{packageName}": Route<PackageInformation, { packageName: string }>;
+    "/{packageName}": Route<PackageResponse, { packageName: string }>;
 }
 
 export const npmFetcher = new Fetcher<NpmRouteDef>("https://registry.npmjs.org");

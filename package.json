@@ -12,6 +12,9 @@
     "author": "Sophia <me@sophia-dev.io>",
     "license": "MIT",
     "devDependencies": {
+        "@types/fs-extra": "^11.0.3",
+        "@types/lodash": "^4.14.200",
+        "@types/node": "^20.8.7",
         "@types/node-fetch": "2.6.7",
         "@typescript-eslint/eslint-plugin": "^6.8.0",
         "@typescript-eslint/parser": "^6.8.0",
@@ -25,8 +28,14 @@
     },
     "dependencies": {
         "@octokit/rest": "^20.0.2",
+        "chalk": "4",
+        "commander": "^11.1.0",
+        "dayjs": "^1.11.10",
+        "fs-extra": "^11.1.1",
+        "lodash": "^4.17.21",
         "node-fetch": "^2.6.7",
         "tsconfig-paths": "^4.2.0",
-        "typia": "^5.2.2"
+        "typia": "^5.2.2",
+        "winston": "^3.11.0"
     }
 }

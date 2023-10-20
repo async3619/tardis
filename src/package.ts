@@ -2,6 +2,7 @@ import { Octokit } from "@octokit/rest";
 
 import { npmFetcher } from "@utils/fetcher/npm";
 import { Nullable } from "@utils/types";
+import { PackageNotFoundError } from "@utils/errors";
 
 export interface ReleaseNote {
     tagName: string;
@@ -23,6 +24,16 @@ export class Package {
             method: "GET",
             query: { packageName },
         });
+
+        if ("error" in data) {
+            switch (data.error) {
+                case "Not found":
+                    throw new PackageNotFoundError(packageName);
+
+                default:
+                    throw new Error(data.error);
+            }
+        }
 
         const latestVersion = data["dist-tags"].latest;
         if (!latestVersion) {
